@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Requirements\TestimonialsYummyJson.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\yummy-red-1.0.0\assets\.DS_Store" />
     <None Include="wwwroot\yummy-red-1.0.0\assets\img\.DS_Store" />
     <None Include="wwwroot\yummy-red-1.0.0\assets\vendor\.DS_Store" />
