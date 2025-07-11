@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/ApiProjeKampi.WebUı/Views/Shared/Components/_ServiceDefaultComponentPartial/Default.cshtml

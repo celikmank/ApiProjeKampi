@@ -23,7 +23,7 @@ namespace ApiProjeKampi.WebApi.Controllers
         [HttpGet]
         public IActionResult CategoryList()
         {
-            var values = _context.Categories.ToList();
+             var values = _context.Categories.ToList();
             return Ok(values);
         }
 

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\WiewComponents\**" />
+    <Compile Remove="wwwroot\flexy-bootstrap-lite-1.0.0\**" />
+    <Content Remove="Views\WiewComponents\**" />
+    <Content Remove="wwwroot\flexy-bootstrap-lite-1.0.0\**" />
+    <EmbeddedResource Remove="Views\WiewComponents\**" />
+    <EmbeddedResource Remove="wwwroot\flexy-bootstrap-lite-1.0.0\**" />
+    <None Remove="Views\WiewComponents\**" />
+    <None Remove="wwwroot\flexy-bootstrap-lite-1.0.0\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Requirements\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiProjeKampi.WebApi\ApiProjeKampi.WebApi.csproj" />
+  </ItemGroup>
+
+</Project>

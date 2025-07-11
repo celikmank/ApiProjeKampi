@@ -7,7 +7,7 @@ namespace ApiProjeKampi.WebApi.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-R7AR1ND;initial catalog=ApiYummyDb;integrated security=true;");
+            optionsBuilder.UseSqlServer("Server=localhost;initial catalog=ApiYummyDb;integrated security=true;");
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Chef> Chefs { get; set; }
