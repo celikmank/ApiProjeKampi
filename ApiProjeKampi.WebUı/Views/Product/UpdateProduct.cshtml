@@ -1,0 +1,76 @@
+﻿@model GetProductByIdDto
+
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Ürün Güncelleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger">
+                                @ViewBag.Error
+                            </div>
+                        }
+                        
+                        <form asp-action="UpdateProduct" method="post">
+                            <input type="hidden" name="ProductId" value="@Model.ProductId" />
+
+                            <div class="form-group">
+                                <label>Ürün Adı</label>
+                                <input type="text" name="ProductName" value="@Model.ProductName" class="form-control" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ürün Açıklaması</label>
+                                <textarea name="ProductDescription" class="form-control" rows="4">@Model.ProductDescription</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fiyat</label>
+                                <input type="number" name="Price" value="@Model.Price" class="form-control" step="0.01" min="0" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Resim URL</label>
+                                <input type="url" name="ImageUrl" value="@Model.ImageUrl" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Kategori</label>
+                                @if (ViewBag.Categories != null)
+                                {
+                                    <select name="CategoryId" class="form-control">
+                                        <option value="">Kategori Seçin</option>
+                                        @foreach (var category in (List<SelectListItem>)ViewBag.Categories)
+                                        {
+                                            <option value="@category.Value" selected="@(category.Selected ? "selected" : null)">@category.Text</option>
+                                        }
+                                    </select>
+                                }
+                                else
+                                {
+                                    <input type="number" name="CategoryId" value="@Model.CategoryId" class="form-control" min="1" />
+                                }
+                            </div>
+
+                            <br />
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Ürünü Güncelle</button>
+                                <a href="/Product/ProductList" class="btn btn-secondary">Geri Dön</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
