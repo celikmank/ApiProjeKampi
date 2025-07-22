@@ -112,7 +112,7 @@ namespace ApiProjeKampi.WebUı.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateProduct(UpdateProductDto updateProductDto)
+        public async Task<IActionResult> UpdateProduct(UpdateFeatureDto updateProductDto)
         {
             try
             {

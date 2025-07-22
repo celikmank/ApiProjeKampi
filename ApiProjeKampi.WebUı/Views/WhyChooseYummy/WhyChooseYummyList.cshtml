@@ -1,9 +1,12 @@
-﻿@model List<ResultFeatureDto>
+﻿﻿
+@model List<ResultWhyChooseYummyDto>
+
 @{
-    ViewData["Title"] = "FeatureList";
+    ViewData["Title"] = "WhyChooseYummyList";
     Layout = "~/Views/Admin/Index.cshtml";
     int count = 0;
 }
+
 
 <section class="section">
     <div class="section-body">
@@ -11,9 +14,7 @@
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Öne Çıkan Alan işlemleri</h4>
-                        <br />
-                        <p>Tema bütünlüğünün bozulmaması adına sadece 1 tane eklenebilir.</p>
+                        <h4>Neden Bizi Seçmelisiniz Listesi</h4>
                     </div>
                     <div class="card-body">
                         <table class="table">
@@ -21,7 +22,6 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Başlık</th>
-                                    <th scope="col">Alt Başlık</th>
                                     <th scope="col">Açıklama</th>
                                     <th scope="col">Sil</th>
                                     <th scope="col">Güncelle</th>
@@ -34,23 +34,14 @@
                                     <tr>
                                         <th scope="row">@count</th>
                                         <td>@item.Title</td>
-                                        <td>@item.SubTitle</td>
                                         <td>@item.Description</td>
-                                        <td><a href="/Feature/DeleteFeature/@item.FeatureId" class="btn btn-danger">Sil</a></td>
-                                        <td><a href="/Feature/UpdateFeature/@item.FeatureId" class="btn btn-success">Güncelle</a></td>
+                                        <td><a href="/WhyChooseYummy/DeleteWhyChooseYummy/@item.ServiceId/" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/WhyChooseYummy/UpdateWhyChooseYummy/@item.ServiceId/" class="btn btn-success">Güncelle</a></td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        @if (Model.Count == 1)
-                        {
-                            <a href="#" class="btn btn-info" onclick="return false;">Feature Mevcut</a>
-                        }
-                        else
-                        {
-                            <a href="/Feature/CreateFeature/" class="btn btn-info">Yeni Feature Girişi</a>
-                        }
-
+                        <a href="/WhyChooseYummy/CreateWhyChooseYummy/" class="btn btn-info">Yeni Alan Girişi</a>
                     </div>
                 </div>
             </div>

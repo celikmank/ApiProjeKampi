@@ -7,13 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\WiewComponents\**" />
     <Compile Remove="wwwroot\flexy-bootstrap-lite-1.0.0\**" />
-    <Content Remove="Views\WiewComponents\**" />
     <Content Remove="wwwroot\flexy-bootstrap-lite-1.0.0\**" />
-    <EmbeddedResource Remove="Views\WiewComponents\**" />
     <EmbeddedResource Remove="wwwroot\flexy-bootstrap-lite-1.0.0\**" />
-    <None Remove="Views\WiewComponents\**" />
     <None Remove="wwwroot\flexy-bootstrap-lite-1.0.0\**" />
   </ItemGroup>
 

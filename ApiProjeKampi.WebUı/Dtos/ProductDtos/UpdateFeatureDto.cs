@@ -1,6 +1,6 @@
 ﻿namespace ApiProjeKampi.WebUı.Dtos.ProductDtos
 {
-    public class UpdateProductDto
+    public class UpdateFeatureDto
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }

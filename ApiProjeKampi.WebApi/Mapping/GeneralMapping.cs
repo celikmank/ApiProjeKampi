@@ -42,6 +42,7 @@ namespace ApiProjeKampi.WebApi.Mapping
             CreateMap<About, UpdateAboutDto>().ReverseMap();
 
             CreateMap<Testimonial,ResultTestimonialDto>().ReverseMap();
+
         }
     }
 }
