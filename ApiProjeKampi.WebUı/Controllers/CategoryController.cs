@@ -59,7 +59,7 @@ namespace ApiProjeKampi.WebApi.Controllers
         public async Task<IActionResult> UpdateCategory(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7020/api/GetCategory?id=" +id);
+            var responseMessage = await client.GetAsync("https://localhost:7020/api/Categories/GetCategory?id=" +id);
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
             var value = JsonConvert.DeserializeObject<GetCategoryByIdDto>(jsonData);
             return View(value);
