@@ -1,0 +1,47 @@
+﻿@model ApiProjeKampi.WebUı.Models.ContactViewModel
+
+<section id="contact" class="contact section">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+            <h2>İletişim</h2>
+            <p><span>Bize Ulaşın</span> <span class="description-title">Mesaj Gönderin</span></p>
+        </div>
+
+        @if (ViewBag.Success != null)
+        {
+            <div class="alert alert-success text-center">@ViewBag.Success</div>
+        }
+        else if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger text-center">@ViewBag.Error</div>
+        }
+
+        <form asp-action="Index" asp-controller="Contact" method="post" class="php-email-form">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <input asp-for="Name" class="form-control" placeholder="Ad Soyad" />
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="col-md-6">
+                    <input asp-for="Email" class="form-control" placeholder="E-posta" />
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+                <div class="col-12">
+                    <input asp-for="Subject" class="form-control" placeholder="Konu" />
+                    <span class="text-danger" asp-validation-for="Subject"></span>
+                </div>
+                <div class="col-12">
+                    <textarea asp-for="Message" class="form-control" rows="6" placeholder="Mesajınız"></textarea>
+                    <span class="text-danger" asp-validation-for="Message"></span>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

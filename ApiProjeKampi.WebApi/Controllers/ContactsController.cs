@@ -52,7 +52,7 @@ namespace ApiProjeKampi.WebApi.Controllers
             var value = _context.Contacts.Find(id);
             return Ok(value);
         }
-
+    
         [HttpPut]
         public IActionResult UpdateContact(UpdateContactDto updateContactDto)
         {
