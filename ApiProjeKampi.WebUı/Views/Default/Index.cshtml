@@ -1,33 +1,33 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
-  @await Component.InvokeAsync("_HeadDefaultComponentPartial")
+@await Component.InvokeAsync("_HeadDefaultComponentPartial")
 
 <body class="index-page">
 
     @await Component.InvokeAsync("_NavbarDefaultComponentPartial")
 
-  
-
     <main class="main">
 
-        <!-- Hero Section -->
+        <!-- Kahraman (Hero) Bölümü -->
         @await Component.InvokeAsync("_FeatureDefaultComponentPartial")
 
-        <!-- About Section -->
+        <!-- Hakkımızda Bölümü -->
         @await Component.InvokeAsync("_AboutDashboardComponentPartial")
 
-        <!-- Why Us Section -->
+        <!-- Neden Biz? Bölümü -->
         @await Component.InvokeAsync("_ServiceDefaultComponentPartial")
 
-        <!--Testimonial Section-->
+        <!-- Müşteri Yorumları Bölümü -->
         @await Component.InvokeAsync("_TestimonialDefaultComponentPartial")
-        <!--Event Section-->
+
+        <!-- Etkinlikler Bölümü -->
         @await Component.InvokeAsync("_EventDefaultComponentPartial")
-        <!-- Stats Section -->
+
+        <!-- İstatistikler Bölümü -->
         <section id="stats" class="stats section dark-background">
 
-            <img src="/Yummy/assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+            <img src="/Yummy/assets/img/stats-bg.jpg" alt="İstatistikler Arkaplan" data-aos="fade-in">
 
             <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
@@ -36,53 +36,50 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Clients</p>
+                            <p>Müşteri</p>
                         </div>
-                    </div><!-- End Stats Item -->
+                    </div>
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Projects</p>
+                            <p>Proje</p>
                         </div>
-                    </div><!-- End Stats Item -->
+                    </div>
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Hours Of Support</p>
+                            <p>Destek Saati</p>
                         </div>
-                    </div><!-- End Stats Item -->
+                    </div>
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Workers</p>
+                            <p>Çalışan</p>
                         </div>
-                    </div><!-- End Stats Item -->
+                    </div>
 
                 </div>
 
             </div>
 
-        </section><!-- /Stats Section -->
-        <!-- Menu Section -->
+        </section><!-- /İstatistikler Bölümü -->
+        <!-- Menü Bölümü -->
         @await Component.InvokeAsync("_DefaultMenuViewComponentPartial")
 
-        
-        @await Component.InvokeAsync("_TestimonialDefaultComponentPartial")
-        <!-- Testimonials Section -->
+        <!-- Şefler Bölümü -->
         @await Component.InvokeAsync("_ChefDefaultComponentPartial")
-        <!-- Chefs Section -->
-        
-        <!-- Gallery Section -->
+
+        <!-- Galeri Bölümü -->
         <section id="gallery" class="gallery section light-background">
 
-            <!-- Section Title -->
+            <!-- Bölüm Başlığı -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Gallery</h2>
-                <p><span>Check</span> <span class="description-title">Our Gallery</span></p>
-            </div><!-- End Section Title -->
+                <h2>Galeri</h2>
+                <p><span>Göz Atın</span> <span class="description-title">Galeri Fotoğraflarımız</span></p>
+            </div>
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -117,26 +114,28 @@
                           }
                         }
                     </script>
+
                     <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="~/Yummy/assets/img/gallery/gallery-1.jpg"><img src="~/Yummy/assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="~/Yummy/assets/img/gallery/gallery-2.jpg"><img src="~/Yummy/assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="~/Yummy/assets/img/gallery/gallery-3.jpg"><img src="~/Yummy/assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="~/Yummy/assets/img/gallery/gallery-4.jpg"><img src="~/Yummy/assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="~/Yummy/assets/img/gallery/gallery-5.jpg"><img src="~/Yummy/assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="~/Yummy/assets/img/gallery/gallery-6.jpg"><img src="~/Yummy/assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="~/Yummy/assets/img/gallery/gallery-7.jpg"><img src="~/Yummy/assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
-                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="~/Yummy/assets/img/gallery/gallery-8.jpg"><img src="~/Yummy/assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
+                        @for (int i = 1; i <= 8; i++)
+                        {
+                            <div class="swiper-slide">
+                                <a class="glightbox" data-gallery="images-gallery" href=$"~/Yummy/assets/img/gallery/gallery-{i}.jpg">
+                                    <img src=$"~/Yummy/assets/img/gallery/gallery-{i}.jpg" class="img-fluid" alt="Galeri @i">
+                                </a>
+                            </div>
+                        }
+
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
 
             </div>
 
-        </section><!-- /Gallery Section -->
-        <!-- Contact Section -->
+        </section><!-- /Galeri Bölümü -->
+        <!-- İletişim / Footer Bölümü -->
         @await Component.InvokeAsync("_FooterDefaultComponentPartial")
 
-    </main> 
+    </main>
 </body>
 
 </html>
