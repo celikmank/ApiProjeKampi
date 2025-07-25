@@ -1,32 +1,29 @@
-﻿using ApiProjeKampi.WebApi.Dtos.ProductDtos;
+﻿using ApiProjeKampi.WebUı.Dtos.ProductDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace ApiProjeKampi.WebUı.ViewComponents._DefaultMenuViewComponent
+public class _DefaultMenuProductComponentPartial : ViewComponent
 {
-    public class _DefaultMenuProductComponentPartial : ViewComponent
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public _DefaultMenuProductComponentPartial(IHttpClientFactory httpClientFactory)
     {
+        _httpClientFactory = httpClientFactory;
+    }
 
-        private readonly IHttpClientFactory _httpClientFactory;
+    public async Task<IViewComponentResult> InvokeAsync()
+    {
+        var client = _httpClientFactory.CreateClient();
+        var response = await client.GetAsync("https://localhost:7020/api/Products");
 
-        public _DefaultMenuProductComponentPartial(IHttpClientFactory httpClientFactory)
+        if (response.IsSuccessStatusCode)
         {
-            _httpClientFactory = httpClientFactory;
-        }
-       
-        public async Task<IViewComponentResult> InvokeAsync()
-        {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7020/api/Products");
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                var JsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(JsonData);
-                return View(values);
-            }
-                return View();
+            var json = await response.Content.ReadAsStringAsync();
+            var products = JsonConvert.DeserializeObject<List<ResultProductDto>>(json);
+            return View(products);
         }
 
+        // null yerine boş liste gönder ki View içinde hata almayasın
+        return View(new List<ResultProductDto>());
     }
 }
-
