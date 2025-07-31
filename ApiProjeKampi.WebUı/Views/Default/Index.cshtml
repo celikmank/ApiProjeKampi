@@ -1,117 +1,87 @@
-﻿<!DOCTYPE html>
-<html lang="tr">
+﻿@{
+    Layout = null; // veya bir layout varsa: Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-@await Component.InvokeAsync("_HeadDefaultComponentPartial")
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    @await Component.InvokeAsync("_HeadDefaultComponentPartial")
+</head>
 
 <body class="index-page">
 
     @await Component.InvokeAsync("_NavbarDefaultComponentPartial")
 
     <main class="main">
-
         <!-- Kahraman (Hero) Bölümü -->
         @await Component.InvokeAsync("_FeatureDefaultComponentPartial")
-
-        <!-- Hakkımızda Bölümü -->
         @await Component.InvokeAsync("_AboutDashboardComponentPartial")
-
-        <!-- Neden Biz? Bölümü -->
         @await Component.InvokeAsync("_ServiceDefaultComponentPartial")
-
-        <!-- Müşteri Yorumları Bölümü -->
         @await Component.InvokeAsync("_TestimonialDefaultComponentPartial")
-
-        <!-- Etkinlikler Bölümü -->
         @await Component.InvokeAsync("_EventDefaultComponentPartial")
 
         <!-- İstatistikler Bölümü -->
         <section id="stats" class="stats section dark-background">
-
-            <img src="/Yummy/assets/img/stats-bg.jpg" alt="İstatistikler Arkaplan" data-aos="fade-in">
-
+            <img src="~/Yummy/assets/img/stats-bg.jpg" alt="İstatistikler Arkaplan" data-aos="fade-in" />
             <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
                 <div class="row gy-4">
-
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Müşteri</p>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Proje</p>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Destek Saati</p>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
                             <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Çalışan</p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
-        </section><!-- /İstatistikler Bölümü -->
-        <!-- Menü Bölümü -->
+        </section>
+        
         @await Component.InvokeAsync("_DefaultMenuViewComponentPartial")
-
-        <!-- Şefler Bölümü -->
         @await Component.InvokeAsync("_ChefDefaultComponentPartial")
 
         <!-- Galeri Bölümü -->
         <section id="gallery" class="gallery section light-background">
-
-            <!-- Bölüm Başlığı -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Galeri</h2>
                 <p><span>Göz Atın</span> <span class="description-title">Galeri Fotoğraflarımız</span></p>
             </div>
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
-
                 <div class="swiper init-swiper">
                     <script type="application/json" class="swiper-config">
                         {
-                          "loop": true,
-                          "speed": 600,
-                          "autoplay": {
-                            "delay": 5000
-                          },
-                          "slidesPerView": "auto",
-                          "centeredSlides": true,
-                          "pagination": {
-                            "el": ".swiper-pagination",
-                            "type": "bullets",
-                            "clickable": true
-                          },
-                          "breakpoints": {
-                            "320": {
-                              "slidesPerView": 1,
-                              "spaceBetween": 0
+                            "loop": true,
+                            "speed": 600,
+                            "autoplay": { "delay": 5000 },
+                            "slidesPerView": "auto",
+                            "centeredSlides": true,
+                            "pagination": {
+                                "el": ".swiper-pagination",
+                                "type": "bullets",
+                                "clickable": true
                             },
-                            "768": {
-                              "slidesPerView": 3,
-                              "spaceBetween": 20
-                            },
-                            "1200": {
-                              "slidesPerView": 5,
-                              "spaceBetween": 20
+                            "breakpoints": {
+                                "320": { "slidesPerView": 1, "spaceBetween": 0 },
+                                "768": { "slidesPerView": 3, "spaceBetween": 20 },
+                                "1200": { "slidesPerView": 5, "spaceBetween": 20 }
                             }
-                          }
                         }
                     </script>
 
@@ -119,23 +89,21 @@
                         @for (int i = 1; i <= 8; i++)
                         {
                             <div class="swiper-slide">
-                                <a class="glightbox" data-gallery="images-gallery" href=$"~/Yummy/assets/img/gallery/gallery-{i}.jpg">
-                                    <img src=$"~/Yummy/assets/img/gallery/gallery-{i}.jpg" class="img-fluid" alt="Galeri @i">
+                                <a class="glightbox" data-gallery="images-gallery" href="@Url.Content($"~/Yummy/assets/img/gallery/gallery-{i}.jpg")">
+                                    <img src="@Url.Content($"~/Yummy/assets/img/gallery/gallery-{i}.jpg")" class="img-fluid" alt="Galeri @i" />
                                 </a>
                             </div>
                         }
-
                     </div>
+
                     <div class="swiper-pagination"></div>
                 </div>
-
             </div>
+        </section>
 
-        </section><!-- /Galeri Bölümü -->
-        <!-- İletişim / Footer Bölümü -->
         @await Component.InvokeAsync("_FooterDefaultComponentPartial")
 
     </main>
-</body>
 
+</body>
 </html>
