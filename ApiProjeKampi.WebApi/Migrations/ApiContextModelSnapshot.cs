@@ -138,38 +138,6 @@ namespace ApiProjeKampi.WebApi.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("ApiProjeKampi.WebApi.Entities.ContactMessage", b =>
-                {
-                    b.Property<int>("ContactMessageId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactMessageId"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Subject")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ContactMessageId");
-
-                    b.ToTable("ContactMessages");
-                });
-
             modelBuilder.Entity("ApiProjeKampi.WebApi.Entities.Feature", b =>
                 {
                     b.Property<int>("FeatureId")

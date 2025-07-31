@@ -11,7 +11,6 @@ namespace ApiProjeKampi.WebApi.Context
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Chef> Chefs { get; set; }
-        public DbSet<ContactMessage> ContactMessages { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Image> Images { get; set; }
