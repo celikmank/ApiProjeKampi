@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "CreateAbout";
-    Layout = "~/Views/Admin/Index.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <section class="section">
@@ -14,26 +14,47 @@
                         <h4>Hakkımda Alanı Ekleme Sayfası</h4>
                     </div>
                     <div class="card-body">
-                        <form method="post">
-                            <label>Başlık</label>
-                            <input type="text" asp-for="Title" class="form-control" />
-                            <br />
-                            <label>Rezervassyon Numarası</label>
-                            <input type="text" asp-for="ReservationNumber" class="form-control" />
-                            <br />
-                            <label>Görsel URL</label>
-                            <input type="text" asp-for="ImageUrl" class="form-control" />
-                            <br />
-                            <label>Video Kapak Görseli</label>
-                            <input type="text" asp-for="VideoCoverImageUrl" class="form-control" />
-                            <br />
-                            <label>Video Linki (Embed Olarak)</label>
-                            <input type="text" asp-for="VideoUrl" class="form-control" />
-                            <br />
-                            <label>Açıklama</label>
-                            <textarea class="form-control" rows="5" asp-for="Description"></textarea>
-                            <br />
-                            <button class="btn btn-primary">Hakkımda Alanı Oluştur</button>
+                        @* Validasyon özetini göster *@
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <form asp-action="CreateAbout" asp-controller="About" method="post">
+                            <div class="mb-3">
+                                <label asp-for="Title" class="form-label">Başlık</label>
+                                <input asp-for="Title" class="form-control" />
+                                <span class="text-danger" asp-validation-for="Title"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="ReservationNumber" class="form-label">Rezervasyon Numarası</label>
+                                <input asp-for="ReservationNumber" class="form-control" />
+                                <span class="text-danger" asp-validation-for="ReservationNumber"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="ImageUrl" class="form-label">Görsel URL</label>
+                                <input asp-for="ImageUrl" class="form-control" />
+                                <span class="text-danger" asp-validation-for="ImageUrl"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="VideoCoverImageUrl" class="form-label">Video Kapak Görseli</label>
+                                <input asp-for="VideoCoverImageUrl" class="form-control" />
+                                <span class="text-danger" asp-validation-for="VideoCoverImageUrl"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="VideoUrl" class="form-label">Video Linki (Embed)</label>
+                                <input asp-for="VideoUrl" class="form-control" />
+                                <span class="text-danger" asp-validation-for="VideoUrl"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Description" class="form-label">Açıklama</label>
+                                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                                <span class="text-danger" asp-validation-for="Description"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Hakkımda Alanı Oluştur</button>
                         </form>
                     </div>
                 </div>
