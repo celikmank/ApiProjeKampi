@@ -4,7 +4,7 @@
 builder.Services.AddAuthentication("Cookies")
     .AddCookie("Cookies", options =>
     {
-        options.LoginPath = "/Login/Index"; // Giriş sayfası
+        options.LoginPath = "/Login/Login"; // Giriş sayfası
         options.AccessDeniedPath = "/Login/AccessDenied"; // Yetki reddi sayfası (isteğe bağlı)
     });
 
